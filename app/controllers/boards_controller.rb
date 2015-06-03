@@ -31,7 +31,7 @@ class BoardsController < ApplicationController
 		@board=Board.find params[:id]
 		@board.destroy
 
-		redirect_to boards_path 
+		redirect_to user_boards_path 
 	end
 
 

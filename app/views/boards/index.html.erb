@@ -7,13 +7,17 @@
 <%@boards.each do |board|%>
 	<%counter+=1%>
 	<br><%=board.name%></br>
-	<%=link_to 'Show each Board', user_board_path(current_user, board)%>
-	<%=link_to 'Edit Each Board', edit_user_board_path(current_user,board)%>
-	<%=link_to 'Create New Board', new_user_board_path(current_user)%>
-
+	<%=link_to 'Show', user_board_path(current_user, board)%>
+	<%=link_to 'Edit', edit_user_board_path(current_user,board)%>
+	
+	<%=link_to 'Delete', user_board_path(current_user, board), method: :delete, data: {confirm:"Do you really want to delete Board?"} %>
 	<%end%>
 
 <p>
 The number of the Board:
 <%=counter%>
+</p>
+
+<p>
+<%=link_to 'Create', new_user_board_path(current_user)%>
 </p>

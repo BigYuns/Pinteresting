@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :users do
   	resources :boards
   end
-
+  resources :pins
   root 'users#index'
 end

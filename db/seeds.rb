@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Board.delete_all
 Board.create! name: "testing", description: "testing", public: true 
+Board.create! name: "testing2", description: "hahahahahahahahah", public: true 
