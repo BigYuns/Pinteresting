@@ -7,8 +7,11 @@
 <%@boards.each do |board|%>
 	<%counter+=1%>
 	<br><%=board.name%></br>
-	<%=link_to 'Show all the Boards', user_board_path(current_user, board)%>
-<%end%>
+	<%=link_to 'Show each Board', user_board_path(current_user, board)%>
+	<%=link_to 'Edit Each Board', edit_user_board_path(current_user,board)%>
+	<%=link_to 'Create New Board', new_user_board_path(current_user)%>
+
+	<%end%>
 
 <p>
 The number of the Board:
