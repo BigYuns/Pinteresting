@@ -5,9 +5,19 @@ one:
   description: MyText
   url: MyString
   likes: 1
+<<<<<<< HEAD
+=======
+  user_id: 
+  board_id: 
+>>>>>>> 236044ed06d85d2750b48bd1e543b20e7ecd009e
 
 two:
   title: MyString
   description: MyText
   url: MyString
   likes: 1
+<<<<<<< HEAD
+=======
+  user_id: 
+  board_id: 
+>>>>>>> 236044ed06d85d2750b48bd1e543b20e7ecd009e

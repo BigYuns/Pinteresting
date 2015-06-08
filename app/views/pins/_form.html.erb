@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <%= form_for @pin do |f| %>
  
   <% if @pin.errors.any? %>
@@ -37,3 +38,50 @@
   </p>
  
 <% end %>
+=======
+<%= form_for([current_user, @board, @pin]) do |f| %>
+
+	<p>
+	<%= f.label :title %> <br>
+	<%= f.text_area :title%> 
+	</p>
+
+	<p>
+	<%= f.label :subtitle %> <br>
+	<%= f.text_area :subtitle%> 
+	</p>
+
+	<p>
+	<%= f.label :description %> <br>
+	<%= f.text_area :description %> 
+	</p>
+
+	<p>
+	<%= f.label :url%> <br>
+	<%= f.text_area :url%> 
+	</p>
+
+	<p>
+	<%= f.label :url2%> <br>
+	<%= f.text_area :url2%> 
+	</p>
+
+	<p>
+	<%= f.label :url3%> <br>
+	<%= f.text_area :url3%> 
+	</p>
+
+	<p>
+	<%= f.label :url4%> <br>
+	<%= f.text_area :url4%> 
+	</p>
+
+
+	<p>
+	<%= f.submit %>
+	</p>
+
+<% end %>
+
+
+>>>>>>> 236044ed06d85d2750b48bd1e543b20e7ecd009e
