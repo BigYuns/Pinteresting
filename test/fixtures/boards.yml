@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  public: false
+<<<<<<< HEAD
+=======
+  user_id: 
+>>>>>>> 236044ed06d85d2750b48bd1e543b20e7ecd009e
+
+two:
+  name: MyString
+  description: MyText
+  public: false
+<<<<<<< HEAD
+=======
+  user_id: 
+>>>>>>> 236044ed06d85d2750b48bd1e543b20e7ecd009e
