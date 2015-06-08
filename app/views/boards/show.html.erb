@@ -1,1 +1,14 @@
-show.html.erb
+<h2>Welcome to the show page of the <%=@board.name%></h2>
+
+<%pin=0%>
+
+<p>These are your pins in the Board! </p>
+
+<%@pins.each do |pin|%>
+	<br><%=pin.title%></br>
+	<%= image_tag(pin.url, width: "30%", height: "30%") %>
+	<%=link_to 'EditPin', edit_user_board_pin_path(:user_id,:board_id)%>
+	<%=link_to 'DeletePin', user_board_pin_path(:user_id,:board_id), method: :delete, data: {confirm:"Do you really want to delete this Pin?"} %>
+<%end%>
+
+<br><%=link_to 'AddPin', new_user_board_pin_path(:user_id,:board_id)%></br>

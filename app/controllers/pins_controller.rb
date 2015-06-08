@@ -31,7 +31,8 @@ class PinsController < ApplicationController
 
 
 	def create
-		@pin=Pin.new(board_params)
+		@board=Board.find(params[:board_id])
+		@pin=@board.pins.new(pin_params)
 		if @pin.save
 			redirect_to @pin
 		else
@@ -42,20 +43,14 @@ class PinsController < ApplicationController
 	def destroy
 		@pin=Pin.find params[:id]
 		@pin.destroy
-
 		redirect_to pins_path 
 
 	end
 
-		@board=Board.find params[:id]
-		@board.destroy
-
-		redirect_to user_boards_path 
 
 	private
 	def pin_params
-			params.require(:pin).permit(:title, :description, :url, :likes)
-		
+		params.require(:pin).permit(:title, :description, :url, :likes)		
 	end
 
 end

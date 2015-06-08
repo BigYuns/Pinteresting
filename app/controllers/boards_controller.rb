@@ -3,14 +3,22 @@ class BoardsController < ApplicationController
 		@boards=Board.all
 	end
 
+
 	def show
+		@user=current_user
 		@board=Board.find params[:id]
+		@pins=Pin.where(board_id:)
+		
+
 	end
 
 	def create
-		@board=Board.new(board_params)
+		@user=current_user
+		@board=current_user.boards.build(board_params)
+		@board.user_id=@user.id
+
 		if @board.save
-			redirect_to @board
+			redirect_to user_board_path(current_user,@board)
 		else
 			render 'new'
 		end
@@ -35,13 +43,10 @@ class BoardsController < ApplicationController
 	end
 
 
-
-
-
 	def update
-		@board=Board.find params[:id]
+		@board=current_user.boards.find(params[:id])
 		if @board.update(board_params)
-			redirect_to @board
+			redirect_to user_board_path(current_user,@board)
 		else
 			render 'edit'
 		end

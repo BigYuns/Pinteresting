@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
 
   resources :users do
-  	resources :boards
+  	resources :boards do
+  		resources :pins
+  	end
   end
-  resources :pins
   root 'users#index'
 end
